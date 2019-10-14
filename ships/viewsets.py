@@ -34,8 +34,8 @@ class PositionsViewSet(viewsets.ReadOnlyModelViewSet):
         return Response(
             [
                 {
-                    "latitude": obj.location.x,
-                    "longitude": obj.location.y,
+                    "longitude": obj.location.x,
+                    "latitude": obj.location.y,
                     "timestamp": obj.timestamp,
                 }
                 for obj in locations

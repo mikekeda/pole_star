@@ -6,6 +6,6 @@ WORKDIR /code
 COPY ./wait-for-it.sh /usr/bin/wait-for-it.sh
 RUN ["chmod", "+x", "/usr/bin/wait-for-it.sh"]
 COPY requirements.txt /code/
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && pip install -r requirements.txt
 COPY . /code/
 ENTRYPOINT ["sh", "./docker-entrypoint.sh"]

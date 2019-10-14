@@ -40,7 +40,7 @@
         }).addTo(map);                                                                                                   
 
         $.ajax({
-          url: 'http://localhost:8000/api/ships/',
+          url: '/api/ships/',
           dataType: 'json'
         }).done(function(ships_data) {
           // Got the current Ships in database. Now get the Positions list for
@@ -48,7 +48,7 @@
           for (i = 0; i < ships_data.length; i++) {
             (function (currentShip) {
               $.ajax({
-                url: 'http://localhost:8000/api/positions/' + currentShip.imo,
+                url: '/api/positions/' + currentShip.imo + '/',
                 dataType: 'json'
               }).done(function(positions_data) {
                 // Add current position marker (1st position in the list).

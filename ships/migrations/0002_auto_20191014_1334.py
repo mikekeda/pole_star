@@ -28,7 +28,7 @@ def load_initial_data(apps, schema_editor):
             ShipLocation(
                 ship=ships[int(row[0])],
                 timestamp=row[1],
-                location=Point(float(row[2]), float(row[3])),
+                location=Point(float(row[3]), float(row[2])),
             ).save()
 
 
