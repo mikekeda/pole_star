@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  backend:
+    build: .
+    image: pole_star
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - SECRET_KEY=%+j68lwenne_e8z\=spsc^fnk16^44@h!j@r2i+@ami4^&()%1c
+      - DB_PASSWORD=pole_star_pass_32
+      - DB_NAME=pole_star
+      - DB_USER=pole_star_admin
+      - DB_HOST=db
+  db:
+    image: mdillon/postgis
+    environment:
+      - POSTGRES_HOST=db
+      - POSTGRES_PASSWORD=pole_star_pass_32
+      - POSTGRES_DB=pole_star
+      - POSTGRES_USER=pole_star_admin

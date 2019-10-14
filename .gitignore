@@ -1,0 +1,14 @@
+.idea/
+/node_modules/
+static_root/
+media/
+reports/
+
+*.pyc
+*.sqlite3
+*.rdb
+*.pid
+
+celerybeat-schedule
+.DS_Store
+package-lock.json
